@@ -24,7 +24,7 @@ int cbinsearch(int* arr, int size, int value, int n) {
     int count = 0;
     while (l < r - 1) {
         int sr = (l + r) / 2;
-        if (*(arr + n) * (arr + sr) == value) {
+        if (*(arr + n) + *(arr + sr) == value) {
             count++;
             for (int i = 1; *(arr + sr) == *(arr + (sr - i)); i++)
                 count++;
