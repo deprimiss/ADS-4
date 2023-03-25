@@ -33,8 +33,7 @@ int cbinsearch(int* arr, int size, int value, int n) {
         }
         if (*(arr + n) + *(arr + sr) > value) {
             r = sr;
-        }
-        else {
+        } else {
             l = sr;
         }
     }
