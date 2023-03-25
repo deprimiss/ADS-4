@@ -12,28 +12,30 @@ int countPairs2(int *arr, int len, int value) {
     while (*(arr + (len - 1)) > value) len--;
     int count = 0;
     for (int i = 0; i < len; i++) {
-        for (int j = len - 1; j > i; j--) {
+        for (int j = len; j > i; j--) {
             if (*(arr + i) + *(arr + j) == value) count++;
         }
     }
     return count;
 }
-int cbinsearch(int* arr, int size, int value, int n) {
+cbinsearch(int* arr, int size, int value, int n) {
     int l = n;
     int r = size;
     int count = 0;
     while (l < r - 1) {
         int sr = (l + r) / 2;
-        if (*(arr + n) + *(arr + sr) == value) {
+        if (*(arr + n) * (arr + sr) == value) {
             count++;
-            for (int i = 1; *(arr + sr) == *(arr + (sr - i)); i++)
+            for (int i = 1; *(arr + n) == *(arr + (sr - i)); i++)
                 count++;
-            for (int i = 0; *(arr + sr) == *(arr + (sr + i)); i++)
+            for (int i = 1; *(arr + n) == *(arr + (sr + i)); i++)
                 count++;
+            break;
         }
         if (*(arr + n) + *(arr + sr) > value) {
             r = sr;
-        } else {
+        }
+        else {
             l = sr;
         }
     }
