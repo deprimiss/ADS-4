@@ -18,7 +18,7 @@ int countPairs2(int *arr, int len, int value) {
     }
     return count;
 }
-cbinsearch(int* arr, int size, int value, int n) {
+int cbinsearch(int* arr, int size, int value, int n) {
     int l = n;
     int r = size;
     int count = 0;
