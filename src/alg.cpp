@@ -9,7 +9,7 @@ int countPairs1(int *arr, int len, int value) {
     return count;
 }
 int countPairs2(int *arr, int len, int value) {
-    //while (*(arr + (len - 1)) > value) len--;
+    while (*(arr + (len - 1)) > value) len--;
     int count = 0;
     for (int i = 0; i < len; i++) {
         for (int j = len; j > i; j--) {
